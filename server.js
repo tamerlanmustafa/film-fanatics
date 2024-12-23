@@ -8,7 +8,7 @@ const morgan = require("morgan");
 
  
 // App configs
-dotenv.config();
+dotenv.config(); 
 const app = express();
 app.set("view engine", "ejs");
   
@@ -23,9 +23,11 @@ app.use(morgan("dev"));
 mongoose.connect(process.env.MONGODB_URI);
 
 mongoose.connection.on("connected", () => {
+  console.log("Mongoose is connected")
 });
 
 mongoose.connection.on("error", (err) => { 
+  console.log(err, "Mongoose failed to connect")
 });
 
 // const Movie = require("./models/movies")
