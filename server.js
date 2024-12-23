@@ -7,7 +7,6 @@ const morgan = require("morgan");
 // const movieController = require("./controllers/moviesControllers");
 
  
-// App configs
 dotenv.config(); 
 const app = express();
 app.set("view engine", "ejs");
