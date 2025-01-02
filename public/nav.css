@@ -1,0 +1,10 @@
+nav {
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #0B192C;
+}
+

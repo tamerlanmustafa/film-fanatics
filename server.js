@@ -3,13 +3,15 @@ const dotenv = require("dotenv")
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 const morgan = require("morgan");
-// const path = require('path');
+const path = require('path');
 const movieController = require("./controllers/moviesControllers");
 
  
 dotenv.config(); 
 const app = express();
 app.set("view engine", "ejs");
+// app.use(express.static('public'));
+
   
 
 const PORT = process.env.PORT || 4000 
@@ -17,7 +19,7 @@ const PORT = process.env.PORT || 4000
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method")); 
 app.use(morgan("dev")); 
-// app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "public")));
   
 mongoose.connect(process.env.MONGODB_URI);
 
