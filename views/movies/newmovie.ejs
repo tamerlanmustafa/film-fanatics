@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="public/main.css" />
+    <title>New Movie</title>
+  </head>
+  <body class="text-center bg-teal-200">
+    <%- include('../partials/nav') %>
+    <h1 class="text-3xl font-bold m-3">Create A New Movie</h1>
+    <form
+      class="w-screen h-screen flex-col flex items-center text-center justify-center bg-teal-200"
+      action="/movies"
+      method="POST"
+    >
+      <div
+        class="w-80 grid p-5 mb-7 bg-white font-semibold border-2 bg-green-200 rounded-xl"
+      >
+        <label for="movieName">Movie Name:</label>
+        <input
+          class="bg-gray-300"
+          type="text"
+          name="movieName"
+          id="movieName"
+        />
+      </div>
+      <div
+        class="w-80 grid p-5 mb-7 bg-white font-semibold border-2 bg-green-200 rounded-xl"
+      >
+        <label for="releaseYear">Release Year:</label>
+        <input
+          class="bg-gray-300"
+          type="text"
+          name="releaseYear"
+          id="releaseYear"
+        />
+      </div>
+      <div
+        class="w-80 grid p-5 mb-7 bg-white font-semibold border-2 bg-green-200 rounded-xl"
+      >
+        <label for="genre">Genre:</label>
+        <input class="bg-gray-300" type="text" name="genre" id="genre" />
+      </div>
+      <div
+        class="w-80 grid p-5 mb-7 bg-white font-semibold border-2 bg-green-200 rounded-xl"
+      >
+        <label for="director">Director:</label>
+        <input class="bg-gray-300" type="text" name="director" id="director" />
+      </div>
+      <div
+        class="w-80 grid p-5 mb-7 bg-white font-semibold border-2 bg-green-200 rounded-xl"
+      >
+        <label for="stillinTheaters">Still in Theaters:</label>
+        <input
+          class="bg-gray-300"
+          type="text"
+          name="stillinTheaters"
+          id="stillinTheaters"
+        />
+      </div>
+      <div
+        class="w-80 grid p-5 mb-7 bg-white font-semibold border-2 bg-green-200 rounded-xl"
+      >
+        <label for="description">Description:</label>
+        <input
+          class="bg-gray-300"
+          type="text"
+          name="description"
+          id="description"
+        />
+      </div>
+      <div
+        class="w-80 grid p-5 mb-7 bg-white font-semibold border-2 bg-green-200 rounded-xl"
+      >
+        <label for="coverPhotoUrl">coverPhotoUrl:</label>
+        <input
+          class="bg-gray-300"
+          type="text"
+          name="coverPhotoUrl"
+          id="coverPhotoUrl"
+        />
+      </div>
+      <button class="animate-pulse" type="submit">Add Movie</button>
+    </form>
+  </body>
+</html>

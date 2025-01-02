@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="/movies" method="POST">
+      <div>
+        <label for="coverPhotoUrl">Cover Photo Url</label>
+        <input type="text" name="coverPhotoUrl" id="coverPhotoUrl" />
+      </div>
+      <hr />
+      <h2>Add your review</h2>
+      <div>
+        <label for="userName">User Name: </label>
+        <input type="text" name="userName" id="userName" />
+      </div>
+
+      <div>
+        <label for="reviews"></label>
+        <textarea id="reviews" name="reviews" maxlength="1500"></textarea>
+      </div>
+      <button type="submit">SUBMIT</button>
+    </form>
+  </body>
+</html>
