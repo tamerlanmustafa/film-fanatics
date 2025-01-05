@@ -4,16 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="/review.css">
   </head>
   <%- include('../partials/nav') %>
-  <body class>
+  <body >
     <form
-      class="w-screen h-screen flex-col flex items-center text-center justify-center bg-teal-200"
+      
       method="POST"
       action="/movies/<%= movie._id %>/review"
     >
       <div
-        class="w-80 grid p-5 mb-7 bg-white font-semibold border-2 bg-green-200 rounded-xl"
+        
       >
         <label for="userName">User Name: </label>
         <input
@@ -25,7 +26,7 @@
         />
       </div>
       <div
-        class="w-80 grid p-5 mb-7 bg-white font-semibold border-2 bg-green-200 rounded-xl"
+        
       >
         <label for="reviews">Review: </label>
         <textarea
@@ -37,7 +38,7 @@
         ></textarea>
       </div>
       <button
-        class="w-80 grid p-5 mb-7 font-semibold border-2 animate-pulse"
+        
         type="submit"
       >
         Submit
