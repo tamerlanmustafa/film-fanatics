@@ -1,5 +1,10 @@
 const models = require("../models/movies");
-const moviesDB = require('../DB/moviesDB')
+const moviesDB = require('../DB/moviesDB');
+
+
+
+
+
 
 const getAllMovies = async (req,res) => {
     try {

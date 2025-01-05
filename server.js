@@ -10,9 +10,9 @@ const movieController = require("./controllers/moviesControllers");
 dotenv.config(); 
 const app = express();
 app.set("view engine", "ejs");
-// app.use(express.static('public'));
 
-  
+
+
 
 const PORT = process.env.PORT || 4000 
 
@@ -31,7 +31,8 @@ mongoose.connection.on("error", (err) => {
   console.log(err, "Mongoose failed to connect")
 }); 
 
-// const Movie = require("./models/movies")
+ 
+
 
 app.get('/', movieController.getAllMovies)
 
