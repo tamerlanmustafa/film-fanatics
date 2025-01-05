@@ -4,49 +4,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="/show.css">
   </head>
-  <body
-    class="text-center w-full bg-teal-200 flex flex-col justify-center items-center"
-  >
+  <body>
     <%- include('../partials/nav') %>
-    <section
-      class="mt-4 flex justify-around items-center w-9/12 p-9 bg-white font-semibold border-2 bg-green-300 rounded-xl"
-    >
-      <div class="w-80 flex flex-col items-center">
+    <section class="show">
+      <div class="movie-info">
         <h2>Movie Name:<%= movie.movieName %></h2>
         <img width="340px" src="<%= movie.coverPhotoUrl %>" alt="" />
         <h2>Genre:<%= movie.genre %></h2>
-        <br />
-        <p>Description: <%= movie.description %></p>
-        <br />
+        <p>DESCRIPTION: <br> <%= movie.description %></p>
+        <br>
         <% if (movie.stillinTheaters) { %>
-        <p>This movie is still in theaters</p>
+        <p>Note:<em>This movie is still in theaters</em></p>
         <% } else { %>
-        <p>This movie is no longer in theaters</p>
-        <% } %> <% movie.userReviews.forEach(review => { %>
-        <hr />
+        <p>Note:<em>This movie is no longer in theaters</em> </p>
       </div>
-
-      <div class="flex flex-col items-center">
+      
+      <div>
         <h2>Reviews:</h2>
-        <br /><br /><br />
-        <div>
-          <p><%=review.reviews %></p>
-          <p>written by: <%=review.userName%></p>
+        <% } %> <% movie.userReviews.forEach(review => { %>
+        <div >
+          <ul>
+            <li class="review">
+              <p><%=review.userName%>:</p>
+              <p><%=review.reviews %></p>
+            </li>
+          </ul>
         </div>
-        <br /><br />
         <%}) %>
-        <hr />
 
-        <a class="text-blue-500" href="/movies/<%=movie._id%>/review/new"
-          >Add a review for this movie</a
-        >
-        <form method="POST" action="/movies/<%=movie._id%>?_method=DELETE">
-          <button class="text-blue-500" type="submit">Delete Movie</button>
-        </form>
-        <a href="/movies/<%=movie._id%>/edit">
-          <button class="text-blue-500" type="submit">Edit Movie</button>
-        </a>
+        <div class="action-buttons">
+          <a href="/movies/<%=movie._id%>/review/new">
+            <button>Add a review</button>
+          </a>
+          <form method="POST" action="/movies/<%=movie._id%>?_method=DELETE">
+            <button type="submit">Delete Movie</button>
+          </form>
+          <a href="/movies/<%=movie._id%>/edit">
+            <button type="submit">Edit Movie</button>
+          </a>
+        </div>
       </div>
     </section>
   </body>
